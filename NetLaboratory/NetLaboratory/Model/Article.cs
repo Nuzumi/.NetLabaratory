@@ -18,7 +18,12 @@ namespace NetLaboratory.Model
         public string Title { get; set; }
         [Required]
         public string Content { get; set; }
-
+        
         public virtual ICollection<Comment> Comments { get; set; }
+
+        public override string ToString()
+        {
+            return Title;
+        }
     }
 }

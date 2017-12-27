@@ -25,6 +25,16 @@ namespace NetLaboratory.Model
             return ctx.Comments.ToList();
         }
 
+        public Article GetArticleById(int id)
+        {
+            return ctx.Articles.Where(i => i.Id == id).FirstOrDefault();
+        }
+
+        public Comment GetCommentById(int id)
+        {
+            return ctx.Comments.Where(i => i.Id == id).FirstOrDefault();
+        }
+
         public List<Comment> GetAllCommentsForArticle(Article article)
         {
             return ctx.Comments.Where(i=>i.Article.Id == article.Id).ToList();

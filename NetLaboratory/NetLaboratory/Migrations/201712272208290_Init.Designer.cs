@@ -13,7 +13,7 @@ namespace NetLaboratory.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201712272123047_Init"; }
+            get { return "201712272208290_Init"; }
         }
         
         string IMigrationMetadata.Source

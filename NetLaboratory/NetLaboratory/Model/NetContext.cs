@@ -10,15 +10,15 @@ namespace NetLaboratory.Model
 {
     public class NetContext : DbContext
     {
-        public NetContext()
-        : base()
-        {
-        }
+        public static string connString = "Data Source=LAPTOP-9BBKLGE9\\MILENA;Initial Catalog=NetLab;Integrated Security=True; App=EntityFramework";
+         public NetContext()
+         : base(connString)
+         {
+         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // Database does not pluralize table names
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
 

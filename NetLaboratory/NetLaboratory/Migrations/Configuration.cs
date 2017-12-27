@@ -1,5 +1,6 @@
 namespace NetLaboratory.Migrations
 {
+    using NetLaboratory.Model;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -18,6 +19,7 @@ namespace NetLaboratory.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
+            context.Articles.AddOrUpdate(i => i.Id, new Article { Title = "Kekekke", Content = "Kekekekkee" });
         }
     }
 }
