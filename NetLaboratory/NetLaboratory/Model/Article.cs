@@ -14,7 +14,7 @@ namespace NetLaboratory.Model
         [Key]
         public int Id { get; set; }
         [Required]
-        [MinLength(5), MaxLength(50, ErrorMessage = "Tytul musi być dłuższy niż 5 znaków i krótszy niż 50!")]
+        [MinLength(3), MaxLength(50, ErrorMessage = "Tytul musi być dłuższy niż 3 znaków i krótszy niż 50!")]
         public string Title { get; set; }
         [Required]
         public string Content { get; set; }

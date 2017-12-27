@@ -17,9 +17,9 @@ namespace NetLaboratory.View
     /// <summary>
     /// Logika interakcji dla klasy AddDialogWindow.xaml
     /// </summary>
-    public partial class AddDialogWindow : Window
+    public partial class AddArticleDialogWindow : Window
     {
-        public AddDialogWindow()
+        public AddArticleDialogWindow()
         {
             InitializeComponent();
         }

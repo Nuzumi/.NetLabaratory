@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using NetLaboratory.Model;
+using Prism.Commands;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,8 @@ namespace NetLaboratory.ViewModel
         private bool isDialogWindowForCommentOpen = false;
         private Window DialogWindowForArticle;
         private Window DialogWindowForComment;
-
+        
+        NetRepo repo;
         #region Property
 
         private string selectedArticle;
@@ -71,6 +73,11 @@ namespace NetLaboratory.ViewModel
             CancelForCommentCommand = new DelegateCommand(CancelForCommentCommandExecute);
             ShowDialogWindowForArticleCommand = new DelegateCommand(ShowDialogWindowForArticleCommandEecute, ShowDialogWindowForArticleCommandCanExecute);
             ShowDialogWindowForCommentCommand = new DelegateCommand(ShowDialogWindowForCommentCommandEecute, ShowDialogWindowForCommentCommandCanExecute);
+            
+            repo = new NetRepo();
+
+            Console.WriteLine(repo.GetAllArticles());
+
         }
 
         #region Commands

@@ -8,7 +8,7 @@ namespace NetLaboratory.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int Id { get; set; }
-        [MinLength(5), MaxLength(200, ErrorMessage = "Komentarz musi mieć od 5 do 200 znaków!")]
+        [ MaxLength(200, ErrorMessage = "Komentarz musi mieć do 200 znaków!")]
         public string Content { get; set; }
 
         [Required]
