@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NetLaboratory.Model
@@ -10,6 +11,8 @@ namespace NetLaboratory.Model
         public int Id { get; set; }
         [ MaxLength(200, ErrorMessage = "Komentarz musi mieć do 200 znaków!")]
         public string Content { get; set; }
+        [Required]
+        public DateTime DayCreated { get; set; }
 
         [Required]
         [ForeignKey("IdArticle")]

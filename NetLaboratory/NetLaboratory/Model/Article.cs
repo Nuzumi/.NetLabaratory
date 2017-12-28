@@ -18,7 +18,9 @@ namespace NetLaboratory.Model
         public string Title { get; set; }
         [Required]
         public string Content { get; set; }
-        
+        [Required]
+        public DateTime DayCreated { get; set; }
+
         public virtual ICollection<Comment> Comments { get; set; }
 
         public override string ToString()

@@ -19,7 +19,7 @@ namespace NetLaboratory.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            context.Articles.AddOrUpdate(i => i.Id, new Article { Title = "Kekekke", Content = "Kekekekkee" });
+            context.Articles.AddOrUpdate(i => i.Id, new Article { Title = "Wa¿ny tytu³", Content = "Ciekawa treœæ" });
         }
     }
 }

@@ -10,9 +10,8 @@ namespace NetLaboratory.Model
 {
     public class NetContext : DbContext
     {
-        public static string connString = "Data Source=LAPTOP-9BBKLGE9\\MILENA;Initial Catalog=NetLab;Integrated Security=True; App=EntityFramework";
-         public NetContext()
-         : base(connString)
+        public NetContext()
+         : base()
          {
          }
 
