@@ -90,9 +90,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="HelperClasses\BindingProxy.cs" />
     <Compile Include="Migrations\201712272208290_Init.cs" />
     <Compile Include="Migrations\201712272208290_Init.Designer.cs">
       <DependentUpon>201712272208290_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712282031225_first.cs" />
+    <Compile Include="Migrations\201712282031225_first.Designer.cs">
+      <DependentUpon>201712282031225_first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712282035558_secound.cs" />
+    <Compile Include="Migrations\201712282035558_secound.Designer.cs">
+      <DependentUpon>201712282035558_secound.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Article.cs" />
@@ -127,6 +136,12 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201712272208290_Init.resx">
       <DependentUpon>201712272208290_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712282031225_first.resx">
+      <DependentUpon>201712282031225_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712282035558_secound.resx">
+      <DependentUpon>201712282035558_secound.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

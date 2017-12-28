@@ -11,7 +11,7 @@ namespace NetLaboratory.Model
     public class NetContext : DbContext
     {
         public NetContext()
-         : base()
+         : base("Name = DefaultConnection")
          {
          }
 
