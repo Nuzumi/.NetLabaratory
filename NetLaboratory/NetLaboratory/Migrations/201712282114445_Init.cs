@@ -14,6 +14,7 @@ namespace NetLaboratory.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Title = c.String(nullable: false, maxLength: 50),
                         Content = c.String(nullable: false),
+                        DayCreated = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -23,6 +24,7 @@ namespace NetLaboratory.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Content = c.String(maxLength: 200),
+                        DayCreated = c.DateTime(nullable: false),
                         IdArticle = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
