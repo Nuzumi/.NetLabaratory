@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NetLaboratory.View"
         mc:Ignorable="d"
-        Title="AddDialogWindow" Height="300" Width="300">
+        Title="AddArticleDialogWindow" Height="300" Width="300">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="3,5,3,8"/>
@@ -28,10 +28,10 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Tytuł" Margin="2"/>
-            <TextBox Grid.Column="1" Margin="2"/>
+            <TextBox Grid.Column="1" Margin="2" Text="{Binding NewArticleTitle , UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap"/>
         </Grid>
 
-        <TextBox Grid.Row="1" Margin="6">
+        <TextBox Grid.Row="1" Margin="6" Text="{Binding NewArticleText , UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap">
             
         </TextBox>
 
@@ -41,8 +41,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Content="Nie ok"/>
-            <Button Content="OK" Grid.Column="1"/>
+            <Button Content="Nie ok" Command="{Binding CancelForArticleCommand}"/>
+            <Button Content="OK" Grid.Column="1" Command="{Binding  AddArticleCommand}"/>
         </Grid>
 
     </Grid>

@@ -3,9 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NetLaboratory"
+        xmlns:ViewModel="clr-namespace:NetLaboratory.ViewModel"
+        xmlns:Helper ="clr-namespace:NetLaboratory.HelperClasses"
         mc:Ignorable="d"
         Title="Blog" Height="350" Width="525">
+    <Window.DataContext>
+        <ViewModel:ApplicationVM/>
+    </Window.DataContext>
     <Grid Margin="5"> 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -20,24 +24,27 @@
         <ComboBox Margin="6" ItemsSource="{Binding ArticleList}" SelectedItem="{Binding SelectedArticle}">
         </ComboBox>
 
-        <Button Content="Dodaj artykuł" Grid.Column="1" Margin="4"/>
-        <Button Content="dodaj komentarz" Grid.Column="2" Margin="4"/>
+        <Button Content="Dodaj artykuł" Grid.Column="1" Margin="4" Command="{Binding ShowDialogWindowForArticleCommand}"/>
+        <Button Content="dodaj komentarz" Grid.Column="2" Margin="4" Command="{Binding ShowDialogWindowForCommentCommand}"/>
 
-        <TextBlock Grid.Row="1" Margin="4" Text="{Binding SelectedArticleText}"> 
+        <TextBlock Grid.Row="1" Margin="4" Text="{Binding SelectedArticleText}" TextWrapping="Wrap"> 
             
         </TextBlock>
 
         <ListView Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Margin="4" ItemsSource="{Binding SelectedArticleComments}" SelectedItem="{Binding SelectedComment}">
+            <ListView.Resources>
+                <Helper:BindingProxy x:Key="Proxy" Data="{Binding}"/>
+            </ListView.Resources>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Text}" HorizontalAlignment="Stretch">
-                        <ContextMenu>
-                            <MenuItem Header="usuń" Command="{Binding DeleteCommentCommand}"/>
-                        </ContextMenu>
-                    </TextBlock>
+                    <Label Content="{Binding Content}" HorizontalAlignment="Stretch"/>
                 </DataTemplate>
-                
             </ListView.ItemTemplate>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="usuń" Command="{Binding Data.DeleteCommentCommand,Source={StaticResource Proxy}}"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
         </ListView>
     </Grid>
 </Window>
