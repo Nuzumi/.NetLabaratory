@@ -181,7 +181,7 @@ namespace NetLaboratory.ViewModel
 
         private void AddCommentCommandExecute()
         {
-            repo.AddComment(new Comment() { Article = SelectedArticle, Content = NewCommentText, DayCreated = DateTime.Now });
+            repo.AddComment(new Comment() { Article = SelectedArticle, Content = NewCommentText });
             CancelForCommentCommandExecute();
             SelectedArticleComments = repo.GetAllCommentsForArticle(SelectedArticle);
         }
@@ -203,7 +203,7 @@ namespace NetLaboratory.ViewModel
 
         private void AddArticelCommandExecute()
         {
-            repo.AddArticle(new Article() { Title = NewArticleTitle, Content = NewArticleText, DayCreated = DateTime.Now });
+            repo.AddArticle(new Article() { Title = NewArticleTitle, Content = NewArticleText });
             CancelForArticleCommandExecute();
             ArticleList = new ObservableCollection<Article>(repo.GetAllArticles());
         }

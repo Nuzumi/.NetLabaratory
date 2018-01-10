@@ -8,18 +8,17 @@ using System.Threading.Tasks;
 
 namespace NetLaboratory.Model
 {
+    [Table("sr13_228010_A")]
     public class Article
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int Id { get; set; }
         [Required]
-        [MinLength(3), MaxLength(50, ErrorMessage = "Tytul musi być dłuższy niż 3 znaków i krótszy niż 50!")]
+        [MinLength(3)]
         public string Title { get; set; }
         [Required]
         public string Content { get; set; }
-        [Required]
-        public DateTime DayCreated { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
 
